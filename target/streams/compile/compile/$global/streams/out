@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/Documents/Trial App/src/main/scala/Firestore/FirestoreGet.scala:10:3: unclosed comment[0m
+[0m[[0m[31merror[0m] [0m[0m  /*import com.google.api.core.ApiFuture[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/Documents/Trial App/src/main/scala/Firestore/FirestoreGet.scala:46:2: '}' expected but eof found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
