@@ -4,7 +4,7 @@
 		module="trial-app$sbt_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20190123100749"
+		publication="20190124105150"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

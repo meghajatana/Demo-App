@@ -1,21 +1,27 @@
-package Firestore
-import scala.util._
+
+package scala.Firestore
 import Model.{Employee, EmployeeDataBean}
-import com.google.cloud.firestore.{CollectionReference, DocumentReference, Firestore, WriteResult}
-import com.google.firebase.cloud.FirestoreClient
+import scala.util.{Failure, Success, Try}
+import com.google.cloud.firestore.{CollectionReference, DocumentReference, WriteResult}
+import connectors.FirebaseConnection.db
+
+
+
 class FirestorePost {
-  val db: Firestore = FirestoreClient.getFirestore
-  var employeeData = Employee("1","Srishti",25)
-       def writeBeanToFirestore[B](docId: String, col: CollectionReference, bean: B): Either[String, WriteResult] = {
-            val newDocRef: DocumentReference = col.document(docId)
-            val tryWrite =
-                Try {
-                    newDocRef.set(bean).get()
-                }
-            tryWrite match {
-                case Failure(ex) => Left(s"error: $ex")
-                case Success(v) => Right(v)
-            }
-        }
-        writeBeanToFirestore[EmployeeDataBean](employeeData.EmployeeId, db.collection("employeedata"), employeeData.toBean)
+  var employeeData = Employee("A","JAYSON",13)
+
+  def beanToFirestore[B](docId: String, col: CollectionReference, bean: B): Either[String, WriteResult] = {
+    val newDocRef: DocumentReference = col.document(docId)
+    val tryWrite =
+      Try {
+        newDocRef.set(bean).get()
+      }
+    tryWrite match {
+      case Failure(ex) => Left(s"error: $ex")
+      case Success(v) => Right(v)
+    }
+  }
+  beanToFirestore[EmployeeDataBean](employeeData.EmployeeId, db.collection("employeedata"), employeeData.toBean)
+
+
 }
